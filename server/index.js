@@ -6,6 +6,8 @@ const numCPUs = require('os').cpus().length;
 const isDev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 5000;
 
+const hello = require("./routes/hello");
+
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
   console.error(`Node cluster master ${process.pid} is running`);
@@ -26,7 +28,7 @@ if (!isDev && cluster.isMaster) {
   app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
 
-  app.use(`/api`, url);
+  app.use(`/api`, hello);
 
   // All remaining requests return the React app, so it can handle routing.
   app.get('*', function(request, response) {
