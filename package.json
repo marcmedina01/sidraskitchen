@@ -1,7 +1,7 @@
 {
-  "name": "heroku-cra-node",
-  "version": "3.0.0",
-  "description": "How to use create-react-app with a custom Node API on Heroku",
+  "name": "SidrasKitchen",
+  "version": "1.0.0",
+  "description": "Sidras Kitchen Web site",
   "engines": {
     "node": "10.x"
   },
